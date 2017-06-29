@@ -17,6 +17,7 @@
 		17EEC6EEE2403D55CE2FD6E1 /* NSArray+PMDCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC2BD00A8ECE2E34734EB /* NSArray+PMDCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17EEC8990724FCB50D8BB20C /* PMDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC2615133B797B5C4ECDC /* PMDQueue.m */; };
 		17EEC925389E2AA953082AF1 /* PMDBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC016B823BC072DE9E6A2 /* PMDBag.m */; };
+		17EEC9FF772FFC84C3A4BCAF /* NSArrayShuffleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC882F20E90853326E36D /* NSArrayShuffleTest.m */; };
 		17EECAB672D740FE98B46528 /* PMDBinaryHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC319AE9F5960C96303BF /* PMDBinaryHeap.m */; };
 		17EECC6B11CEF3128A0FEE7C /* NSArrayMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */; };
 		17EECC81607C212DB89413F4 /* PMDBag.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC48AE0B684EA75CF6D1B /* PMDBag.h */; };
@@ -50,6 +51,7 @@
 		17EEC48AE0B684EA75CF6D1B /* PMDBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDBag.h; sourceTree = "<group>"; };
 		17EEC607AB60005DDF7E0DC2 /* PMDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDQueue.h; sourceTree = "<group>"; };
 		17EEC79B4D231BEDE3E3174E /* NSArrayFindTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayFindTest.m; sourceTree = "<group>"; };
+		17EEC882F20E90853326E36D /* NSArrayShuffleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayShuffleTest.m; sourceTree = "<group>"; };
 		17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayFilterTest.m; sourceTree = "<group>"; };
 		360A26DD1F0405BC00B14D0A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		360A26DE1F0405BC00B14D0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,6 +139,7 @@
 				17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */,
 				17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */,
 				17EEC79B4D231BEDE3E3174E /* NSArrayFindTest.m */,
+				17EEC882F20E90853326E36D /* NSArrayShuffleTest.m */,
 			);
 			path = PMDCollectionsTests;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				17EECC6B11CEF3128A0FEE7C /* NSArrayMappingTest.m in Sources */,
 				17EEC65DD5E543379A5C3BD9 /* NSArrayFilterTest.m in Sources */,
 				17EEC6CEDEA7E74DEB944F71 /* NSArrayFindTest.m in Sources */,
+				17EEC9FF772FFC84C3A4BCAF /* NSArrayShuffleTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
