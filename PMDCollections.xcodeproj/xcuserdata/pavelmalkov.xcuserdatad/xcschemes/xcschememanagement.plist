@@ -9,26 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>All in NSArrayPMDCollectionsTest.xcscheme</key>
+		<key>All in NSArrayFindTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>All in NSArrayFindTest.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>All in NSArrayShuffleTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 		<key>All tests.xcscheme</key>
 		<dict>
@@ -40,9 +33,16 @@
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 		<key>All in NSArrayCreateFromRangeTest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>-[NSArrayCreateWithWeakElementsTest testWeak_].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />

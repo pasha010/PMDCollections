@@ -37,13 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param endIndex greater than startIndex
  * @return array from nsnumbers
  */
-+ (nullable  NSArray<NSNumber *> *)arrayFromIndex:(NSInteger)startIndex toIndex:(NSInteger)endIndex;
-
-@end
-
-@interface NSArray (PMDCreationWithWeakElements)
-
-//+ (nonnull instancetype)arrayWithWeakReferences;
++ (nullable NSArray<NSNumber *> *)arrayFromIndex:(NSInteger)startIndex toIndex:(NSInteger)endIndex;
 
 @end
 

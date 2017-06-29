@@ -42,7 +42,3 @@
 }
 
 @end
-
-@implementation NSArray (PMDCreationWithWeakElements)
-
-@end
