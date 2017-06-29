@@ -115,7 +115,7 @@
         return self;
     }
     return [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary<NSString *, id> *bindings) {
-        BOOL hasPassed = NO;
+        BOOL hasPassed;
         @try {
             hasPassed = predicate(obj);
         }
@@ -142,21 +142,16 @@
 
     BOOL (*func)(id, SEL, id) = (BOOL (*)(id, SEL, id)) imp;
 
-    NSMutableArray<id> *array = [NSMutableArray arrayWithCapacity:self.count];
-
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    return [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary<NSString *, id> *bindings) {
         BOOL hasPassed;
         @try {
             hasPassed = func(target, sel, obj);
         }
         @catch (id error) {
-            return;
+            hasPassed = NO;
         }
-        if (hasPassed) {
-            [array addObject:obj];
-        }
-    }];
-    return [array copy];
+        return hasPassed;
+    }]];
 }
 
 - (nullable id)find:(BOOL(^ _Nonnull)(id _Nonnull element))predicate {
