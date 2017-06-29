@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		17EEC01C2FE18640BEEB9DB8 /* PMDBinaryHeapTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC946FDEABCA75F0B83B5 /* PMDBinaryHeapTest.m */; };
-		17EEC0233A61056AF0DDBD3D /* PMDTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC4325B8BAE716A4C73C4 /* PMDTree.m */; };
 		17EEC084EEC7EC76AB0988B3 /* PMDQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC607AB60005DDF7E0DC2 /* PMDQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17EEC31742C564BFF96F3D02 /* NSArray+PMDCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC53FC1BC0B2F2B668C91 /* NSArray+PMDCreation.m */; };
+		17EEC360264935F1866104D0 /* PMDStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC6E7CCD018D905413969 /* PMDStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17EEC45509A07480C797E10D /* PMDBinaryHeap.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC2450199C84C392B5562 /* PMDBinaryHeap.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17EEC61B68983988582AA1B7 /* PMDTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC0233ABE0946CD1D0C47 /* PMDTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17EEC65DD5E543379A5C3BD9 /* NSArrayFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */; };
 		17EEC6CEDEA7E74DEB944F71 /* NSArrayFindTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC79B4D231BEDE3E3174E /* NSArrayFindTest.m */; };
+		17EEC85056F238ABD190AFDF /* PMDQueueTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EECD2CB83B1E93A127BFD4 /* PMDQueueTest.m */; };
 		17EEC86B159BAAE8636588DC /* NSArrayCreateFromRangeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC0063C01F68A7012401D /* NSArrayCreateFromRangeTest.m */; };
 		17EEC8990724FCB50D8BB20C /* PMDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC2615133B797B5C4ECDC /* PMDQueue.m */; };
 		17EEC9FF772FFC84C3A4BCAF /* NSArrayShuffleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC882F20E90853326E36D /* NSArrayShuffleTest.m */; };
 		17EECAB672D740FE98B46528 /* PMDBinaryHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC319AE9F5960C96303BF /* PMDBinaryHeap.m */; };
 		17EECAD3D6403E3AE3E4176F /* NSArray+PMDFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC99EB96FE168D0A7367B /* NSArray+PMDFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17EECC6B11CEF3128A0FEE7C /* NSArrayMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */; };
+		17EECCBCA6DF3A8D05231C83 /* PMDStackTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC4E09353BC4AF0D81A29 /* PMDStackTest.m */; };
+		17EECD51A4BA2CB36E79F343 /* PMDStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC4187521E4BC9B2E30F9 /* PMDStack.m */; };
 		17EECD87BAFEDDA359F6F652 /* NSArray+PMDFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EECE7D3521CABFAB8ABFF6 /* NSArray+PMDFunctions.m */; };
 		17EECE23EC9FA6FF2EDD95FA /* NSArray+PMDCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC9E5D844243199F47356 /* NSArray+PMDCreation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		360A26DF1F0405BC00B14D0A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360A26DD1F0405BC00B14D0A /* CoreFoundation.framework */; };
@@ -41,19 +43,21 @@
 
 /* Begin PBXFileReference section */
 		17EEC0063C01F68A7012401D /* NSArrayCreateFromRangeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayCreateFromRangeTest.m; sourceTree = "<group>"; };
-		17EEC0233ABE0946CD1D0C47 /* PMDTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDTree.h; sourceTree = "<group>"; };
 		17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayMappingTest.m; sourceTree = "<group>"; };
 		17EEC2450199C84C392B5562 /* PMDBinaryHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDBinaryHeap.h; sourceTree = "<group>"; };
 		17EEC2615133B797B5C4ECDC /* PMDQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDQueue.m; sourceTree = "<group>"; };
 		17EEC319AE9F5960C96303BF /* PMDBinaryHeap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDBinaryHeap.m; sourceTree = "<group>"; };
-		17EEC4325B8BAE716A4C73C4 /* PMDTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDTree.m; sourceTree = "<group>"; };
+		17EEC4187521E4BC9B2E30F9 /* PMDStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDStack.m; sourceTree = "<group>"; };
+		17EEC4E09353BC4AF0D81A29 /* PMDStackTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDStackTest.m; sourceTree = "<group>"; };
 		17EEC53FC1BC0B2F2B668C91 /* NSArray+PMDCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PMDCreation.m"; sourceTree = "<group>"; };
 		17EEC607AB60005DDF7E0DC2 /* PMDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDQueue.h; sourceTree = "<group>"; };
+		17EEC6E7CCD018D905413969 /* PMDStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDStack.h; sourceTree = "<group>"; };
 		17EEC79B4D231BEDE3E3174E /* NSArrayFindTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayFindTest.m; sourceTree = "<group>"; };
 		17EEC882F20E90853326E36D /* NSArrayShuffleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayShuffleTest.m; sourceTree = "<group>"; };
 		17EEC946FDEABCA75F0B83B5 /* PMDBinaryHeapTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDBinaryHeapTest.m; sourceTree = "<group>"; };
 		17EEC99EB96FE168D0A7367B /* NSArray+PMDFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PMDFunctions.h"; sourceTree = "<group>"; };
 		17EEC9E5D844243199F47356 /* NSArray+PMDCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PMDCreation.h"; sourceTree = "<group>"; };
+		17EECD2CB83B1E93A127BFD4 /* PMDQueueTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDQueueTest.m; sourceTree = "<group>"; };
 		17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayFilterTest.m; sourceTree = "<group>"; };
 		17EECE7D3521CABFAB8ABFF6 /* NSArray+PMDFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PMDFunctions.m"; sourceTree = "<group>"; };
 		360A26DD1F0405BC00B14D0A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -123,12 +127,12 @@
 				17EEC2450199C84C392B5562 /* PMDBinaryHeap.h */,
 				17EEC2615133B797B5C4ECDC /* PMDQueue.m */,
 				17EEC607AB60005DDF7E0DC2 /* PMDQueue.h */,
-				17EEC4325B8BAE716A4C73C4 /* PMDTree.m */,
-				17EEC0233ABE0946CD1D0C47 /* PMDTree.h */,
 				17EECE7D3521CABFAB8ABFF6 /* NSArray+PMDFunctions.m */,
 				17EEC99EB96FE168D0A7367B /* NSArray+PMDFunctions.h */,
 				17EEC53FC1BC0B2F2B668C91 /* NSArray+PMDCreation.m */,
 				17EEC9E5D844243199F47356 /* NSArray+PMDCreation.h */,
+				17EEC4187521E4BC9B2E30F9 /* PMDStack.m */,
+				17EEC6E7CCD018D905413969 /* PMDStack.h */,
 			);
 			path = PMDCollections;
 			sourceTree = "<group>";
@@ -143,6 +147,8 @@
 				17EEC882F20E90853326E36D /* NSArrayShuffleTest.m */,
 				17EEC0063C01F68A7012401D /* NSArrayCreateFromRangeTest.m */,
 				17EEC946FDEABCA75F0B83B5 /* PMDBinaryHeapTest.m */,
+				17EECD2CB83B1E93A127BFD4 /* PMDQueueTest.m */,
+				17EEC4E09353BC4AF0D81A29 /* PMDStackTest.m */,
 			);
 			path = PMDCollectionsTests;
 			sourceTree = "<group>";
@@ -157,8 +163,8 @@
 				36ADED4D1F03FD2D0096C373 /* PMDCollections.h in Headers */,
 				17EEC45509A07480C797E10D /* PMDBinaryHeap.h in Headers */,
 				17EEC084EEC7EC76AB0988B3 /* PMDQueue.h in Headers */,
+				17EEC360264935F1866104D0 /* PMDStack.h in Headers */,
 				17EECAD3D6403E3AE3E4176F /* NSArray+PMDFunctions.h in Headers */,
-				17EEC61B68983988582AA1B7 /* PMDTree.h in Headers */,
 				17EECE23EC9FA6FF2EDD95FA /* NSArray+PMDCreation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,9 +271,9 @@
 			files = (
 				17EECAB672D740FE98B46528 /* PMDBinaryHeap.m in Sources */,
 				17EEC8990724FCB50D8BB20C /* PMDQueue.m in Sources */,
-				17EEC0233A61056AF0DDBD3D /* PMDTree.m in Sources */,
 				17EECD87BAFEDDA359F6F652 /* NSArray+PMDFunctions.m in Sources */,
 				17EEC31742C564BFF96F3D02 /* NSArray+PMDCreation.m in Sources */,
+				17EECD51A4BA2CB36E79F343 /* PMDStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +287,8 @@
 				17EEC9FF772FFC84C3A4BCAF /* NSArrayShuffleTest.m in Sources */,
 				17EEC86B159BAAE8636588DC /* NSArrayCreateFromRangeTest.m in Sources */,
 				17EEC01C2FE18640BEEB9DB8 /* PMDBinaryHeapTest.m in Sources */,
+				17EEC85056F238ABD190AFDF /* PMDQueueTest.m in Sources */,
+				17EECCBCA6DF3A8D05231C83 /* PMDStackTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

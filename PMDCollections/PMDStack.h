@@ -1,5 +1,5 @@
 //
-//  PMDQueue
+//  PMDStack
 //  PMDCollections
 //
 //  Created by Pavel Malkov on 28.06.17.
@@ -10,22 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// FIFO
-@interface PMDQueue<__covariant ObjectType> : NSObject <NSCopying, NSFastEnumeration, NSSecureCoding>
+/// LIFO
+
+@interface PMDStack<__covariant ObjectType> : NSObject <NSCopying, NSFastEnumeration, NSSecureCoding>
 
 @property (nonatomic, assign, readonly) NSUInteger count;
 
-+ (nonnull instancetype)queue;
-
-+ (nonnull instancetype)queueWithArray:(nullable NSArray<ObjectType> *)array;
-
 - (nonnull instancetype)init;
+
+- (nonnull instancetype)initWithSet:(nullable NSSet<ObjectType> *)set;
 
 - (nonnull instancetype)initWithArray:(nullable NSArray<ObjectType> *)array NS_DESIGNATED_INITIALIZER;
 
-- (void)enqueue:(nonnull ObjectType)object;
+- (void)push:(nonnull ObjectType)object;
 
-- (nullable ObjectType)dequeue;
+- (nullable ObjectType)pop;
+
+- (nullable ObjectType)peek;
 
 - (BOOL)isEqual:(id)other;
 

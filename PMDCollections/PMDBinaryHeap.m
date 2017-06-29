@@ -1,7 +1,7 @@
 //
 //  PMDBinaryHeap
 //  PMDCollections
-// 
+//
 //  Created by Pavel Malkov on 28.06.17.
 //  Copyright (c) 2014-2017 Prime Digital. All rights reserved.
 //
@@ -154,6 +154,12 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
     PMDBinaryHeap *binaryHeap = [[PMDBinaryHeap allocWithZone:zone] initWithComparator:[_comparator copy]];
     binaryHeap.binaryHeap = CFBinaryHeapCreateCopy(kCFAllocatorDefault, 0, _binaryHeap);
     return binaryHeap;
+}
+
+- (NSUInteger)hash {
+    NSUInteger hash = (NSUInteger) self.binaryHeap;
+    hash = hash * 31u + (NSUInteger) self.comparator;
+    return hash;
 }
 
 @end

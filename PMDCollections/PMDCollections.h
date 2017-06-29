@@ -18,4 +18,4 @@ FOUNDATION_EXPORT const unsigned char PMDCollectionsVersionString[];
 #import <PMDCollections/NSArray+PMDCreation.h>
 #import <PMDCollections/PMDBinaryHeap.h>
 #import <PMDCollections/PMDQueue.h>
-#import <PMDCollections/PMDTree.h>
+#import <PMDCollections/PMDStack.h>
