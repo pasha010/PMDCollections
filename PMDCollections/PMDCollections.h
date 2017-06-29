@@ -14,7 +14,7 @@ FOUNDATION_EXPORT double PMDCollectionsVersionNumber;
 //! Project version string for PMDCollections.
 FOUNDATION_EXPORT const unsigned char PMDCollectionsVersionString[];
 
-#import <PMDCollections/NSArray+PMDCollections.h>
+#import <PMDCollections/NSArray+PMDFunctions.h>
 #import <PMDCollections/PMDBinaryHeap.h>
 #import <PMDCollections/PMDQueue.h>
 #import <PMDCollections/PMDTree.h>

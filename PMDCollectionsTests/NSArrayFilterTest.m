@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSArray+PMDCollections.h"
+#import <PMDCollections/PMDCollections.h>
 
 @interface NSArrayFilterTest : XCTestCase
 

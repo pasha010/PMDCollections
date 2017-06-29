@@ -14,17 +14,18 @@
 		17EEC61B68983988582AA1B7 /* PMDTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC0233ABE0946CD1D0C47 /* PMDTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17EEC65DD5E543379A5C3BD9 /* NSArrayFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */; };
 		17EEC6CEDEA7E74DEB944F71 /* NSArrayFindTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC79B4D231BEDE3E3174E /* NSArrayFindTest.m */; };
-		17EEC6EEE2403D55CE2FD6E1 /* NSArray+PMDCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC2BD00A8ECE2E34734EB /* NSArray+PMDCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17EEC6EEE2403D55CE2FD6E1 /* NSArray+PMDCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC2BD00A8ECE2E34734EB /* NSArray+PMDCollections.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		17EEC8990724FCB50D8BB20C /* PMDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC2615133B797B5C4ECDC /* PMDQueue.m */; };
 		17EEC925389E2AA953082AF1 /* PMDBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC016B823BC072DE9E6A2 /* PMDBag.m */; };
 		17EEC9FF772FFC84C3A4BCAF /* NSArrayShuffleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC882F20E90853326E36D /* NSArrayShuffleTest.m */; };
 		17EECAB672D740FE98B46528 /* PMDBinaryHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC319AE9F5960C96303BF /* PMDBinaryHeap.m */; };
+		17EECAD3D6403E3AE3E4176F /* NSArray+PMDFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC99EB96FE168D0A7367B /* NSArray+PMDFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17EECC6B11CEF3128A0FEE7C /* NSArrayMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */; };
-		17EECC81607C212DB89413F4 /* PMDBag.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC48AE0B684EA75CF6D1B /* PMDBag.h */; };
+		17EECC81607C212DB89413F4 /* PMDBag.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC48AE0B684EA75CF6D1B /* PMDBag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17EECD87BAFEDDA359F6F652 /* NSArray+PMDFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EECE7D3521CABFAB8ABFF6 /* NSArray+PMDFunctions.m */; };
 		360A26DF1F0405BC00B14D0A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360A26DD1F0405BC00B14D0A /* CoreFoundation.framework */; };
 		360A26E01F0405BC00B14D0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360A26DE1F0405BC00B14D0A /* Foundation.framework */; };
 		36ADED461F03FD2D0096C373 /* PMDCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADED3C1F03FD2D0096C373 /* PMDCollections.framework */; };
-		36ADED4B1F03FD2D0096C373 /* PMDCollectionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36ADED4A1F03FD2D0096C373 /* PMDCollectionsTests.m */; };
 		36ADED4D1F03FD2D0096C373 /* PMDCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 36ADED3F1F03FD2D0096C373 /* PMDCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -52,14 +53,15 @@
 		17EEC607AB60005DDF7E0DC2 /* PMDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDQueue.h; sourceTree = "<group>"; };
 		17EEC79B4D231BEDE3E3174E /* NSArrayFindTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayFindTest.m; sourceTree = "<group>"; };
 		17EEC882F20E90853326E36D /* NSArrayShuffleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayShuffleTest.m; sourceTree = "<group>"; };
+		17EEC99EB96FE168D0A7367B /* NSArray+PMDFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PMDFunctions.h"; sourceTree = "<group>"; };
 		17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayFilterTest.m; sourceTree = "<group>"; };
+		17EECE7D3521CABFAB8ABFF6 /* NSArray+PMDFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PMDFunctions.m"; sourceTree = "<group>"; };
 		360A26DD1F0405BC00B14D0A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		360A26DE1F0405BC00B14D0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		36ADED3C1F03FD2D0096C373 /* PMDCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMDCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36ADED3F1F03FD2D0096C373 /* PMDCollections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMDCollections.h; sourceTree = "<group>"; };
 		36ADED401F03FD2D0096C373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36ADED451F03FD2D0096C373 /* PMDCollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMDCollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36ADED4A1F03FD2D0096C373 /* PMDCollectionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMDCollectionsTests.m; sourceTree = "<group>"; };
 		36ADED4C1F03FD2D0096C373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,8 @@
 				17EEC0233ABE0946CD1D0C47 /* PMDTree.h */,
 				17EEC016B823BC072DE9E6A2 /* PMDBag.m */,
 				17EEC48AE0B684EA75CF6D1B /* PMDBag.h */,
+				17EECE7D3521CABFAB8ABFF6 /* NSArray+PMDFunctions.m */,
+				17EEC99EB96FE168D0A7367B /* NSArray+PMDFunctions.h */,
 			);
 			path = PMDCollections;
 			sourceTree = "<group>";
@@ -134,7 +138,6 @@
 		36ADED491F03FD2D0096C373 /* PMDCollectionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				36ADED4A1F03FD2D0096C373 /* PMDCollectionsTests.m */,
 				36ADED4C1F03FD2D0096C373 /* Info.plist */,
 				17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */,
 				17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */,
@@ -152,11 +155,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				36ADED4D1F03FD2D0096C373 /* PMDCollections.h in Headers */,
-				17EEC6EEE2403D55CE2FD6E1 /* NSArray+PMDCollections.h in Headers */,
 				17EEC45509A07480C797E10D /* PMDBinaryHeap.h in Headers */,
 				17EEC084EEC7EC76AB0988B3 /* PMDQueue.h in Headers */,
-				17EEC61B68983988582AA1B7 /* PMDTree.h in Headers */,
 				17EECC81607C212DB89413F4 /* PMDBag.h in Headers */,
+				17EECAD3D6403E3AE3E4176F /* NSArray+PMDFunctions.h in Headers */,
+				17EEC61B68983988582AA1B7 /* PMDTree.h in Headers */,
+				17EEC6EEE2403D55CE2FD6E1 /* NSArray+PMDCollections.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +269,7 @@
 				17EEC8990724FCB50D8BB20C /* PMDQueue.m in Sources */,
 				17EEC0233A61056AF0DDBD3D /* PMDTree.m in Sources */,
 				17EEC925389E2AA953082AF1 /* PMDBag.m in Sources */,
+				17EECD87BAFEDDA359F6F652 /* NSArray+PMDFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +277,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36ADED4B1F03FD2D0096C373 /* PMDCollectionsTests.m in Sources */,
 				17EECC6B11CEF3128A0FEE7C /* NSArrayMappingTest.m in Sources */,
 				17EEC65DD5E543379A5C3BD9 /* NSArrayFilterTest.m in Sources */,
 				17EEC6CEDEA7E74DEB944F71 /* NSArrayFindTest.m in Sources */,
@@ -398,6 +402,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = PMDCollections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -416,6 +421,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = PMDCollections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

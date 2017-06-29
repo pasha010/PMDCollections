@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSArray+PMDCollections.h"
+#import <PMDCollections/PMDCollections.h>
 
 @interface NSArrayShuffleTest : XCTestCase
 
@@ -30,6 +30,10 @@
     NSArray<NSNumber *> *sortedShuffledArray = [shuffledArray sortedArrayUsingSelector:@selector(compare:)];
 
     XCTAssertEqualObjects(sortedArray, sortedShuffledArray);
+}
+
+- (void)testShuffle_lessThan2Elements {
+    XCTAssertEqualObjects([@[@1] shuffle], @[@1]);
 }
 
 @end

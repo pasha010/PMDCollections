@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSArray+PMDCollections.h"
+#import <PMDCollections/PMDCollections.h>
 
 @interface NSArrayFindTest : XCTestCase
 
@@ -24,6 +24,14 @@
         }];
     }];
     XCTAssertEqualObjects(three, @3);
+}
+
+- (void)testFind_blockNonExistingElement {
+    NSArray<NSNumber *> *array = @[@0, @1, @2, @3, @4, @5];
+    NSNumber *obj = [array find:^BOOL(NSNumber *element) {
+        return element.integerValue == 323;
+    }];
+    XCTAssertEqualObjects(obj, nil);
 }
 
 - (void)testFind_blockEqualToNil {
@@ -67,6 +75,19 @@
         three = [array findByTarget:self withSelector:@selector(findFunction:)];
     }];
     XCTAssertEqualObjects(three, @3);
+}
+
+- (BOOL)findNonExistingFunction:(NSNumber *)number {
+    return number.integerValue == 3987;
+}
+
+- (void)testFind_selectorNonExistingElement {
+    NSArray<NSNumber *> *array = @[@0, @1, @2, @3, @4, @5];
+    __block NSNumber *obj = nil;
+    [self measureBlock:^{
+        obj = [array findByTarget:self withSelector:@selector(findNonExistingFunction:)];
+    }];
+    XCTAssertEqualObjects(obj, nil);
 }
 
 - (void)testFind_selectorEqualToNil {

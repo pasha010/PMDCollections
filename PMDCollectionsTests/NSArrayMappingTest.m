@@ -7,7 +7,30 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <PMDCollections/NSArray+PMDCollections.h>
+#import <PMDCollections/PMDCollections.h>
+
+@interface NSNumber (MapSelectorTest)
+
+- (nullable NSString *)randomNullString;
+
+- (nullable NSString *)everyNullString;
+
+@end
+
+@implementation NSNumber (MapSelectorTest)
+
+- (nullable NSString *)randomNullString {
+    if (self.integerValue % 2 == 0) {
+        return nil;
+    }
+    return self.stringValue;
+}
+
+- (nullable NSString *)everyNullString {
+    return nil;
+}
+
+@end
 
 @interface NSArrayMappingTest : XCTestCase
 
@@ -124,6 +147,19 @@
     XCTAssertEqualObjects(stringArray, nil);
 }
 
+- (void)testMap_selectorWhichReturnSomeNils {
+    NSArray<NSNumber *> *array = @[@1, @2, @3, @4, @5];
+    NSArray<NSString *> *stringArray = [array mapBySelector:@selector(randomNullString)];
+    NSArray<NSString *> *result = @[@"1", @"3", @"5"];
+    XCTAssertEqualObjects(stringArray, result);
+}
+
+- (void)testMap_selectorWhichReturnAllNils {
+    NSArray<NSNumber *> *array = @[@1, @2, @3, @4, @5];
+    NSArray<NSString *> *stringArray = [array mapBySelector:@selector(everyNullString)];
+    XCTAssertEqualObjects(stringArray, @[]);
+}
+
 - (NSString *)convertNSNumberToNSString:(NSNumber *)number {
     return [NSString stringWithFormat:@"convert %@", number];
 }
@@ -196,6 +232,27 @@
 
     NSArray<NSString *> *result = @[@"1", @"3", @"5"];
     XCTAssertEqualObjects(stringArray, result);
+}
+
+- (nullable NSString *)randomNullString:(NSNumber *)number {
+    return [number randomNullString];
+}
+
+- (nullable NSString *)everyNullString:(NSNumber *)number {
+    return [number everyNullString];
+}
+
+- (void)testMap_targetAndSelectorWhichReturnSomeNils {
+    NSArray<NSNumber *> *array = @[@1, @2, @3, @4, @5];
+    NSArray<NSString *> *stringArray = [array mapByTarget:self withSelector:@selector(randomNullString:)];
+    NSArray<NSString *> *result = @[@"1", @"3", @"5"];
+    XCTAssertEqualObjects(stringArray, result);
+}
+
+- (void)testMap_targetAndSelectorWhichReturnAllNils {
+    NSArray<NSNumber *> *array = @[@1, @2, @3, @4, @5];
+    NSArray<NSString *> *stringArray = [array mapByTarget:self withSelector:@selector(everyNullString:)];
+    XCTAssertEqualObjects(stringArray, @[]);
 }
 
 @end
