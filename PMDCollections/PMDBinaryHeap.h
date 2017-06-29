@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nonnull instancetype)binaryHeapWithComparator:(nonnull NSComparator)comparator;
 
++ (nonnull instancetype)binaryHeapWithObjects:(nonnull NSArray<ObjectType> *)array
+                                   comparator:(nonnull NSComparator)comparator;
+
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
 - (nonnull instancetype)initWithComparator:(nonnull NSComparator)comparator NS_DESIGNATED_INITIALIZER;  // CFBinaryHeapCreate
@@ -40,7 +43,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)removeAllObjects;  // CFBinaryHeapRemoveAllValues
 
-- (void)enumerateObjectsUsingBlock:(void(^_Nonnull)(ObjectType _Nonnull element))block;  // CFBinaryHeapApplyFunction
+- (void)enumerateObjectsUsingBlock:(void(^_Nonnull)(ObjectType _Nonnull element))block;
+
+- (BOOL)isEqual:(id)other;
+
+- (BOOL)isEqualToHeap:(PMDBinaryHeap *)heap;
+
+- (NSUInteger)hash;  // CFBinaryHeapApplyFunction
 
 @end
 

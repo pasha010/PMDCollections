@@ -156,10 +156,23 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
     return binaryHeap;
 }
 
+- (BOOL)isEqual:(id)other {
+    if (other == self) {
+        return YES;
+    }
+    if (!other || ![[other class] isEqual:[self class]]) {
+        return NO;
+    }
+
+    PMDBinaryHeap *heap = other;
+    if (![self.allValues isEqualToArray:heap.allValues]) {
+        return NO;
+    }
+    return YES;
+}
+
 - (NSUInteger)hash {
-    NSUInteger hash = (NSUInteger) self.binaryHeap;
-    hash = hash * 31u + (NSUInteger) self.comparator;
-    return hash;
+    return 31u + [self.allValues hash];
 }
 
 @end

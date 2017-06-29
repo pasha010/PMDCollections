@@ -138,7 +138,6 @@
 
     XCTAssertNotNil(decodedQueue);
     XCTAssertEqualObjects(encodedQueue, decodedQueue);
-
 }
 
 @end

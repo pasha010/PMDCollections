@@ -219,6 +219,31 @@
     XCTAssertEqualObjects(heap.allValues, newHeap.allValues);
 }
 
+- (void)test_hashEquals {
+    PMDBinaryHeap<NSNumber *> *heap1 = [PMDBinaryHeap binaryHeap];
+    [heap1 addObject:@3];
+    [heap1 addObject:@8];
+    [heap1 addObject:@5];
+
+    PMDBinaryHeap<NSNumber *> *heap2 = [PMDBinaryHeap binaryHeap];
+    [heap2 addObject:@3];
+    [heap2 addObject:@8];
+    [heap2 addObject:@5];
+    XCTAssertEqual([heap1 hash], [heap2 hash]);
+}
+
+- (void)test_hashNotEquals {
+    PMDBinaryHeap<NSNumber *> *heap1 = [PMDBinaryHeap binaryHeap];
+    [heap1 addObject:@3];
+    [heap1 addObject:@8];
+    [heap1 addObject:@5];
+
+    PMDBinaryHeap<NSNumber *> *heap2 = [PMDBinaryHeap binaryHeap];
+    [heap2 addObject:@3];
+    [heap2 addObject:@5];
+    XCTAssertNotEqual([heap1 hash], [heap2 hash]);
+}
+
 @end
 
 @implementation PMDBinaryHeapTest (Descending)
