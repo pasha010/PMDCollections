@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17EEC0233A61056AF0DDBD3D /* PMDTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC4325B8BAE716A4C73C4 /* PMDTree.m */; };
+		17EEC084EEC7EC76AB0988B3 /* PMDQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC607AB60005DDF7E0DC2 /* PMDQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17EEC2FDB8C386B8B5B52C5F /* NSArray+PMDCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC08AECEDF759CE9A1B8C /* NSArray+PMDCollections.m */; };
+		17EEC45509A07480C797E10D /* PMDBinaryHeap.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC2450199C84C392B5562 /* PMDBinaryHeap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17EEC61B68983988582AA1B7 /* PMDTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC0233ABE0946CD1D0C47 /* PMDTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17EEC65DD5E543379A5C3BD9 /* NSArrayFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */; };
+		17EEC6EEE2403D55CE2FD6E1 /* NSArray+PMDCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC2BD00A8ECE2E34734EB /* NSArray+PMDCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17EEC8990724FCB50D8BB20C /* PMDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC2615133B797B5C4ECDC /* PMDQueue.m */; };
+		17EEC925389E2AA953082AF1 /* PMDBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC016B823BC072DE9E6A2 /* PMDBag.m */; };
+		17EECAB672D740FE98B46528 /* PMDBinaryHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC319AE9F5960C96303BF /* PMDBinaryHeap.m */; };
+		17EECC6B11CEF3128A0FEE7C /* NSArrayMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */; };
+		17EECC81607C212DB89413F4 /* PMDBag.h in Headers */ = {isa = PBXBuildFile; fileRef = 17EEC48AE0B684EA75CF6D1B /* PMDBag.h */; };
+		360A26DF1F0405BC00B14D0A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360A26DD1F0405BC00B14D0A /* CoreFoundation.framework */; };
+		360A26E01F0405BC00B14D0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360A26DE1F0405BC00B14D0A /* Foundation.framework */; };
 		36ADED461F03FD2D0096C373 /* PMDCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADED3C1F03FD2D0096C373 /* PMDCollections.framework */; };
 		36ADED4B1F03FD2D0096C373 /* PMDCollectionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36ADED4A1F03FD2D0096C373 /* PMDCollectionsTests.m */; };
 		36ADED4D1F03FD2D0096C373 /* PMDCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 36ADED3F1F03FD2D0096C373 /* PMDCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +37,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17EEC016B823BC072DE9E6A2 /* PMDBag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDBag.m; sourceTree = "<group>"; };
+		17EEC0233ABE0946CD1D0C47 /* PMDTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDTree.h; sourceTree = "<group>"; };
+		17EEC08AECEDF759CE9A1B8C /* NSArray+PMDCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PMDCollections.m"; sourceTree = "<group>"; };
+		17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayMappingTest.m; sourceTree = "<group>"; };
+		17EEC2450199C84C392B5562 /* PMDBinaryHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDBinaryHeap.h; sourceTree = "<group>"; };
+		17EEC2615133B797B5C4ECDC /* PMDQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDQueue.m; sourceTree = "<group>"; };
+		17EEC2BD00A8ECE2E34734EB /* NSArray+PMDCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PMDCollections.h"; sourceTree = "<group>"; };
+		17EEC319AE9F5960C96303BF /* PMDBinaryHeap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDBinaryHeap.m; sourceTree = "<group>"; };
+		17EEC4325B8BAE716A4C73C4 /* PMDTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDTree.m; sourceTree = "<group>"; };
+		17EEC48AE0B684EA75CF6D1B /* PMDBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDBag.h; sourceTree = "<group>"; };
+		17EEC607AB60005DDF7E0DC2 /* PMDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDQueue.h; sourceTree = "<group>"; };
+		17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayFilterTest.m; sourceTree = "<group>"; };
+		360A26DD1F0405BC00B14D0A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		360A26DE1F0405BC00B14D0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		36ADED3C1F03FD2D0096C373 /* PMDCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMDCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36ADED3F1F03FD2D0096C373 /* PMDCollections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMDCollections.h; sourceTree = "<group>"; };
 		36ADED401F03FD2D0096C373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				360A26DF1F0405BC00B14D0A /* CoreFoundation.framework in Frameworks */,
+				360A26E01F0405BC00B14D0A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360A26DC1F0405BC00B14D0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				360A26DD1F0405BC00B14D0A /* CoreFoundation.framework */,
+				360A26DE1F0405BC00B14D0A /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		36ADED321F03FD2D0096C373 = {
 			isa = PBXGroup;
 			children = (
 				36ADED3E1F03FD2D0096C373 /* PMDCollections */,
 				36ADED491F03FD2D0096C373 /* PMDCollectionsTests */,
 				36ADED3D1F03FD2D0096C373 /* Products */,
+				360A26DC1F0405BC00B14D0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +113,16 @@
 			children = (
 				36ADED3F1F03FD2D0096C373 /* PMDCollections.h */,
 				36ADED401F03FD2D0096C373 /* Info.plist */,
+				17EEC08AECEDF759CE9A1B8C /* NSArray+PMDCollections.m */,
+				17EEC2BD00A8ECE2E34734EB /* NSArray+PMDCollections.h */,
+				17EEC319AE9F5960C96303BF /* PMDBinaryHeap.m */,
+				17EEC2450199C84C392B5562 /* PMDBinaryHeap.h */,
+				17EEC2615133B797B5C4ECDC /* PMDQueue.m */,
+				17EEC607AB60005DDF7E0DC2 /* PMDQueue.h */,
+				17EEC4325B8BAE716A4C73C4 /* PMDTree.m */,
+				17EEC0233ABE0946CD1D0C47 /* PMDTree.h */,
+				17EEC016B823BC072DE9E6A2 /* PMDBag.m */,
+				17EEC48AE0B684EA75CF6D1B /* PMDBag.h */,
 			);
 			path = PMDCollections;
 			sourceTree = "<group>";
@@ -82,6 +132,8 @@
 			children = (
 				36ADED4A1F03FD2D0096C373 /* PMDCollectionsTests.m */,
 				36ADED4C1F03FD2D0096C373 /* Info.plist */,
+				17EEC1879EA807C7DE79C7F5 /* NSArrayMappingTest.m */,
+				17EECE6C163E1461604A44FF /* NSArrayFilterTest.m */,
 			);
 			path = PMDCollectionsTests;
 			sourceTree = "<group>";
@@ -94,6 +146,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				36ADED4D1F03FD2D0096C373 /* PMDCollections.h in Headers */,
+				17EEC6EEE2403D55CE2FD6E1 /* NSArray+PMDCollections.h in Headers */,
+				17EEC45509A07480C797E10D /* PMDBinaryHeap.h in Headers */,
+				17EEC084EEC7EC76AB0988B3 /* PMDQueue.h in Headers */,
+				17EEC61B68983988582AA1B7 /* PMDTree.h in Headers */,
+				17EECC81607C212DB89413F4 /* PMDBag.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17EEC2FDB8C386B8B5B52C5F /* NSArray+PMDCollections.m in Sources */,
+				17EECAB672D740FE98B46528 /* PMDBinaryHeap.m in Sources */,
+				17EEC8990724FCB50D8BB20C /* PMDQueue.m in Sources */,
+				17EEC0233A61056AF0DDBD3D /* PMDTree.m in Sources */,
+				17EEC925389E2AA953082AF1 /* PMDBag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				36ADED4B1F03FD2D0096C373 /* PMDCollectionsTests.m in Sources */,
+				17EECC6B11CEF3128A0FEE7C /* NSArrayMappingTest.m in Sources */,
+				17EEC65DD5E543379A5C3BD9 /* NSArrayFilterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -307,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,6 +458,7 @@
 				36ADED521F03FD2D0096C373 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36ADED531F03FD2D0096C373 /* Build configuration list for PBXNativeTarget "PMDCollectionsTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +467,7 @@
 				36ADED551F03FD2D0096C373 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

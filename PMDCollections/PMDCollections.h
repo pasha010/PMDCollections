@@ -6,7 +6,7 @@
 //  Copyright © 2017 Prime Digital. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for PMDCollections.
 FOUNDATION_EXPORT double PMDCollectionsVersionNumber;
@@ -14,6 +14,7 @@ FOUNDATION_EXPORT double PMDCollectionsVersionNumber;
 //! Project version string for PMDCollections.
 FOUNDATION_EXPORT const unsigned char PMDCollectionsVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <PMDCollections/PublicHeader.h>
-
-
+#import <PMDCollections/NSArray+PMDCollections.h>
+#import <PMDCollections/PMDBinaryHeap.h>
+#import <PMDCollections/PMDQueue.h>
+#import <PMDCollections/PMDTree.h>
