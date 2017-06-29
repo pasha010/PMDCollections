@@ -154,16 +154,57 @@
     }]];
 }
 
-- (nullable id)find:(BOOL(^ _Nonnull)(id _Nonnull element))predicate {
-    __block id object = nil;
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        BOOL hasPassed = predicate(obj);
-        if (hasPassed) {
-            object = obj;
-            *stop = YES;
+- (nullable id)find:(BOOL(^ _Nullable)(id _Nonnull element))predicate {
+    if (!predicate) {
+        return nil;
+    }
+    NSUInteger index = [self indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        BOOL res;
+        @try {
+            res = predicate(obj);
         }
+        @catch (id error) {
+            res = NO;
+        }
+        return res;
     }];
-    return object;
+
+    if (index == NSNotFound) {
+        return nil;
+    }
+    return self[index];
+}
+
+- (nullable id)findByTarget:(nullable id)target withSelector:(nullable SEL)sel {
+    if (!target || !sel) {
+        return nil;
+    }
+    if (![target respondsToSelector:sel]) {
+        return nil;
+    }
+    IMP imp = nil;
+    imp = [target methodForSelector:sel];
+    if (!imp) {
+        return nil;
+    }
+
+    BOOL (*func)(id, SEL, id) = (BOOL (*)(id, SEL, id)) imp;
+
+    NSUInteger index = [self indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        BOOL res;
+        @try {
+            res = func(target, sel, obj);
+        }
+        @catch (id error) {
+            res = NO;
+        }
+        return res;
+    }];
+
+    if (index == NSNotFound) {
+        return nil;
+    }
+    return self[index];
 }
 
 - (nonnull NSArray<id> *)shuffle {

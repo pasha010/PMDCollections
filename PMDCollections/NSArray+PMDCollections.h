@@ -72,9 +72,9 @@ NS_ASSUME_NONNULL_BEGIN
  * @param predicate filter predicate
  * @return object object passed predicate
  */
-- (nullable ObjectType)find:(BOOL(^ _Nonnull)(ObjectType _Nonnull element))predicate;
+- (nullable ObjectType)find:(BOOL(^ _Nullable)(ObjectType _Nonnull element))predicate;
 
-- (nullable ObjectType)findBySelector:(BOOL(^ _Nonnull)(ObjectType _Nonnull element))predicate;
+- (nullable ObjectType)findByTarget:(nullable id)target withSelector:(nullable SEL)predicate;
 
 /**
  * shuffle current array
