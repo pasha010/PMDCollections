@@ -10,43 +10,37 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-// TODO CFBinaryHeapGetValues, CFBinaryHeapApplyFunction
+// CFBinaryHeapGetValues, CFBinaryHeapApplyFunction
+
 @interface PMDBinaryHeap<__covariant ObjectType> : NSObject <NSCopying>
 
-//! CFBinaryHeapGetCount
-@property (nonatomic, readonly) NSUInteger count;
+@property (nonatomic, readonly) NSUInteger count;  // like CFBinaryHeapGetCount
 
-//! CFBinaryHeapGetMinimum and CFBinaryHeapGetMinimumIfPresent
-@property (nullable, nonatomic, readonly) ObjectType topObject;
+@property (nullable, nonatomic, readonly) ObjectType topObject;  // like CFBinaryHeapGetMinimum and CFBinaryHeapGetMinimumIfPresent
 
-//! CFBinaryHeapGetValues
-@property (nullable, nonatomic, readonly) NSSet<ObjectType> *allValues;
+@property (nullable, nonatomic, readonly) NSArray<ObjectType> *allValues;  // CFBinaryHeapGetValues
+
++ (nonnull instancetype)binaryHeap;  // ascending by default and default comparator
+
++ (nonnull instancetype)binaryHeapWithComparator:(nonnull NSComparator)comparator;
 
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
-//! CFBinaryHeapCreate
-- (nonnull instancetype)initWithOrderingType:(NSComparisonResult)ordering
-                                  comparator:(nonnull NSComparator)comparator NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithComparator:(nonnull NSComparator)comparator NS_DESIGNATED_INITIALIZER;  // CFBinaryHeapCreate
 
-//! CFBinaryHeapGetCountOfValue
-- (NSUInteger)countOfObject:(nonnull ObjectType)object;
+- (void)addObject:(nonnull ObjectType)object;  // CFBinaryHeapAddValue
 
-//! CFBinaryHeapContainsValue
-- (BOOL)containsObject:(nonnull ObjectType)object;
+- (NSUInteger)countOfObject:(nonnull ObjectType)object;  // CFBinaryHeapGetCountOfValue
 
-//! CFBinaryHeapAddValue
-- (void)addObject:(nonnull ObjectType)object;
+- (BOOL)containsObject:(nonnull ObjectType)object;  // CFBinaryHeapContainsValue
 
-- (nullable ObjectType)popTopObject;
+- (nullable ObjectType)popTopObject;  // CFBinaryHeapGetMinimum & CFBinaryHeapRemoveMinimumValue
 
-//! CFBinaryHeapRemoveMinimumValue
-- (void)removeTopObject;
+- (void)removeTopObject;  // CFBinaryHeapRemoveMinimumValue
 
-//! CFBinaryHeapRemoveAllValues
-- (void)removeAllObjects;
+- (void)removeAllObjects;  // CFBinaryHeapRemoveAllValues
 
-//! CFBinaryHeapApplyFunction
-- (void)enumerateObjectsUsingBlock:(void(^_Nonnull)(ObjectType _Nonnull element))block;
+- (void)enumerateObjectsUsingBlock:(void(^_Nonnull)(ObjectType _Nonnull element))block;  // CFBinaryHeapApplyFunction
 
 @end
 

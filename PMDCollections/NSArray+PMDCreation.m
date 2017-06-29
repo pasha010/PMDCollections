@@ -22,7 +22,6 @@
 //  Created by Pavel Malkov on 29.06.17.
 //
 
-#import <CoreFoundation/CoreFoundation.h>
 #import "NSArray+PMDCreation.h"
 
 //  неплохо бы создать имплементацию без добавлению кучи элементов в массив

@@ -26,9 +26,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- * like NSIndexSet
- */
 @interface NSArray<__covariant ObjectType> (PMDCreationFromRange)
 
 /**

@@ -14,7 +14,6 @@
 
 @property (nonnull, nonatomic) CFBinaryHeapRef binaryHeap;
 @property (nonnull, nonatomic, copy, readonly) NSComparator comparator;
-@property (nonatomic, assign, readonly) NSComparisonResult ordering;
 
 @end
 
@@ -46,10 +45,19 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
 @dynamic topObject;
 @dynamic allValues;
 
-- (instancetype)initWithOrderingType:(NSComparisonResult)ordering comparator:(NSComparator)comparator {
++ (nonnull instancetype)binaryHeap {
+    return [PMDBinaryHeap binaryHeapWithComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [obj1 compare:obj2];
+    }];
+}
+
++ (nonnull instancetype)binaryHeapWithComparator:(nonnull NSComparator)comparator {
+    return [[PMDBinaryHeap alloc] initWithComparator:comparator];
+}
+
+- (nonnull instancetype)initWithComparator:(nonnull NSComparator)comparator {
     self = [super init];
     if (self) {
-        _ordering = ordering;
         _comparator = [comparator copy];
 
         CFBinaryHeapCallBacks callbacks = (CFBinaryHeapCallBacks) {
@@ -74,9 +82,6 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
 
 - (NSUInteger)count {
     CFIndex count = CFBinaryHeapGetCount(_binaryHeap);
-    if (count < 0) {
-        return 0;
-    }
     return (NSUInteger) count;
 }
 
@@ -85,7 +90,7 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
 }
 
 - (BOOL)containsObject:(nonnull id)object {
-    return CFBinaryHeapContainsValue(_binaryHeap, (__bridge const void *)(object));;
+    return CFBinaryHeapContainsValue(_binaryHeap, (__bridge const void *)(object));
 }
 
 - (nullable id)topObject {
@@ -100,6 +105,9 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
 }
 
 - (void)addObject:(nonnull id)object {
+    if (!object) {
+        return;
+    }
     CFBinaryHeapAddValue(_binaryHeap, (__bridge void *)object);
 }
 
@@ -119,44 +127,33 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
     CFBinaryHeapRemoveAllValues(_binaryHeap);
 }
 
-- (nullable NSSet<id> *)allValues {
+- (nullable NSArray<id> *)allValues {
     if (self.count == 0) {
         return nil;
     }
-    NSMutableSet *set = [NSMutableSet set];
+    CFIndex size = CFBinaryHeapGetCount(_binaryHeap);
+    CFTypeRef *cfValues = calloc((size_t) size, sizeof(CFTypeRef));
+    CFBinaryHeapGetValues(_binaryHeap, cfValues);
+    CFArrayRef values = CFArrayCreate(kCFAllocatorDefault, cfValues, size, &kCFTypeArrayCallBacks);
+    
+    NSArray *set = (__bridge NSArray *)values;
+    free(cfValues);
 
-    const void **elements = NULL;
-    CFBinaryHeapGetValues(_binaryHeap, elements);
-
-    for (NSUInteger i = 0; i < self.count; i++) {
-        id element = (__bridge id)&(*elements)[i];
-        if (element) {
-            [set addObject:element];
-        }
-    }
-    return [set copy];
+    return set;
 }
 
 - (void)enumerateObjectsUsingBlock:(void (^ _Nonnull)(id _Nonnull element))block {
-
+    CFBinaryHeapApplyFunction(_binaryHeap, &PMDBinaryHeapApply, (__bridge void *)(block));
 }
 
 - (void)dealloc {
     CFRelease(_binaryHeap);
 }
 
-// CFBinaryHeapCreateCopy
 - (id)copyWithZone:(nullable NSZone *)zone {
-    PMDBinaryHeap *binaryHeap = [[PMDBinaryHeap allocWithZone:zone] initWithOrderingType:_ordering comparator:[_comparator copy]];
+    PMDBinaryHeap *binaryHeap = [[PMDBinaryHeap allocWithZone:zone] initWithComparator:[_comparator copy]];
     binaryHeap.binaryHeap = CFBinaryHeapCreateCopy(kCFAllocatorDefault, 0, _binaryHeap);
     return binaryHeap;
 }
-
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
-                                  objects:(id __unsafe_unretained _Nullable[_Nonnull])buffer
-                                    count:(NSUInteger)len {
-    return [self.allValues countByEnumeratingWithState:state objects:buffer count:len];
-}
-
 
 @end
