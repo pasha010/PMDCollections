@@ -19,6 +19,14 @@
 
 @dynamic count;
 
++ (instancetype)stack {
+    return [[PMDStack alloc] init];
+}
+
++ (instancetype)stackWithArray:(nullable NSArray<id> *)array {
+    return [[PMDStack alloc] initWithArray:array];
+}
+
 - (instancetype)initWithCoder:(NSCoder *)coder {
     NSArray *array = [coder decodeObject];
     return [self initWithArray:array];
@@ -28,14 +36,10 @@
     return [self initWithArray:nil];
 }
 
-- (instancetype)initWithSet:(nullable NSSet<id> *)set {
-    return [self initWithArray:set.allObjects];
-}
-
 - (instancetype)initWithArray:(nullable NSArray<id> *)array {
     self = [super init];
     if (self) {
-        _array = [NSMutableArray arrayWithArray:array];
+        _array = [NSMutableArray arrayWithArray:[array reverseObjectEnumerator].allObjects];
     }
     return self;
 }
@@ -44,13 +48,17 @@
     if (!object) {
         return;
     }
-    [_array addObject:object];
+    if (_array.count == 0) {
+        [_array addObject:object];
+    } else {
+        [_array insertObject:object atIndex:0];
+    }
 }
 
 - (nullable id)pop {
     if (_array.count > 0) {
-        id object = _array.lastObject;
-        [_array removeLastObject];
+        id object = _array.firstObject;
+        [_array removeObjectAtIndex:0];
         return object;
     }
     return nil;
@@ -58,7 +66,7 @@
 
 - (nullable  id)peek {
     if (_array.count > 0) {
-        id object = _array.lastObject;
+        id object = _array.firstObject;
         return object;
     }
     return nil;
@@ -69,10 +77,12 @@
 }
 
 - (id)copyWithZone:(nullable NSZone *)zone {
-    return [[PMDStack allocWithZone:zone] initWithArray:[_array copy]];
+    return [[PMDStack allocWithZone:zone] initWithArray:[_array reverseObjectEnumerator].allObjects];
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained _Nullable[_Nonnull])buffer count:(NSUInteger)len {
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
+                                  objects:(id __unsafe_unretained _Nullable[_Nonnull])buffer
+                                    count:(NSUInteger)len {
     return [_array countByEnumeratingWithState:state objects:buffer count:len];
 }
 
@@ -81,7 +91,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:_array];
+    [coder encodeObject:[_array reverseObjectEnumerator].allObjects];
 }
 
 - (BOOL)isEqual:(id)other {
@@ -101,6 +111,11 @@
 
 - (NSUInteger)hash {
     return [self.array hash];
+}
+
+- (NSString *)description {
+    NSString *arrayAsString = [self.array componentsJoinedByString:@", "];
+    return [NSString stringWithFormat:@"<%@: (%@)>", NSStringFromClass([self class]), arrayAsString];
 }
 
 @end

@@ -16,9 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) NSUInteger count;
 
-- (nonnull instancetype)init;
++ (nonnull instancetype)stack;
 
-- (nonnull instancetype)initWithSet:(nullable NSSet<ObjectType> *)set;
++ (nonnull instancetype)stackWithArray:(nullable NSArray<ObjectType> *)array;
+
+- (nonnull instancetype)init;
 
 - (nonnull instancetype)initWithArray:(nullable NSArray<ObjectType> *)array NS_DESIGNATED_INITIALIZER;
 

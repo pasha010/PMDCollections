@@ -45,17 +45,45 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
 @dynamic topObject;
 @dynamic allValues;
 
++ (nonnull NSComparator)defaultComparator {
+    static dispatch_once_t token;
+    static NSComparator defaultComparator = nil;
+    dispatch_once(&token, ^{
+        defaultComparator = ^NSComparisonResult(id obj1, id obj2) {
+            return [obj1 compare:obj2];
+        };
+    });
+    return [defaultComparator copy];
+}
+
 + (nonnull instancetype)binaryHeap {
-    return [PMDBinaryHeap binaryHeapWithComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [obj1 compare:obj2];
-    }];
+    return [PMDBinaryHeap binaryHeapWithComparator:PMDBinaryHeap.defaultComparator];
 }
 
 + (nonnull instancetype)binaryHeapWithComparator:(nonnull NSComparator)comparator {
     return [[PMDBinaryHeap alloc] initWithComparator:comparator];
 }
 
++ (instancetype)binaryHeapWithObjects:(nonnull NSArray<id> *)array {
+    return [[PMDBinaryHeap alloc] initWithWithObjects:array];
+}
+
++ (instancetype)binaryHeapWithObjects:(nonnull NSArray<id> *)array comparator:(nonnull NSComparator)comparator {
+    return [[PMDBinaryHeap alloc] initWithWithObjects:array comparator:comparator];
+}
+
 - (nonnull instancetype)initWithComparator:(nonnull NSComparator)comparator {
+    return [self initWithWithObjects:@[] comparator:comparator];
+}
+
+- (instancetype)initWithWithObjects:(nonnull NSArray<id> *)array {
+    return [self initWithWithObjects:array comparator:PMDBinaryHeap.defaultComparator];
+}
+
+- (instancetype)initWithWithObjects:(nonnull NSArray<id> *)array comparator:(nonnull NSComparator)comparator {
+    if (!comparator) {
+        return nil;
+    }
     self = [super init];
     if (self) {
         _comparator = [comparator copy];
@@ -76,6 +104,10 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
                 .copyDescription = NULL,
         };
         _binaryHeap = CFBinaryHeapCreate(kCFAllocatorDefault, 0, &callbacks, &compareContext);
+
+        [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self addObject:obj];
+        }];
     }
     return self;
 }
@@ -147,7 +179,9 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
 }
 
 - (void)dealloc {
-    CFRelease(_binaryHeap);
+    if (_binaryHeap) {
+        CFRelease(_binaryHeap);
+    }
 }
 
 - (id)copyWithZone:(nullable NSZone *)zone {
@@ -173,6 +207,11 @@ static void PMDBinaryHeapApply(const void *val, void *context) {
 
 - (NSUInteger)hash {
     return 31u + [self.allValues hash];
+}
+
+- (NSString *)description {
+    NSString *allValuesAsString = [self.allValues componentsJoinedByString:@", "];
+    return [NSString stringWithFormat:@"<%@: (%@)>", NSStringFromClass([self class]), allValuesAsString];
 }
 
 @end

@@ -122,6 +122,16 @@
 
 - (void)test_coding {
     PMDQueue<NSNumber *> *encodedQueue = [PMDQueue queueWithArray:@[@1, @2, @3]];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:encodedQueue];
+    XCTAssertNotNil(data);
+
+    PMDQueue *decodedQueue = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    XCTAssertNotNil(decodedQueue);
+    XCTAssertEqualObjects(encodedQueue, decodedQueue);
+}
+
+- (void)test_secureCoding {
+    PMDQueue<NSNumber *> *encodedQueue = [PMDQueue queueWithArray:@[@1, @2, @3]];
 
     NSMutableData *data = [NSMutableData data];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
@@ -138,6 +148,11 @@
 
     XCTAssertNotNil(decodedQueue);
     XCTAssertEqualObjects(encodedQueue, decodedQueue);
+}
+
+- (void)test_description {
+    PMDQueue<NSNumber *> *queue = [PMDQueue queueWithArray:@[@1, @2, @3]];
+    XCTAssertEqualObjects(queue.description, @"PMDQueue: (1, 2, 3)");
 }
 
 @end

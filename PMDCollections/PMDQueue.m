@@ -100,5 +100,9 @@
     return [_array hash];
 }
 
+- (NSString *)description {
+    NSString *arrayAsString = [self.array componentsJoinedByString:@", "];
+    return [NSString stringWithFormat:@"%@: (%@)", NSStringFromClass([self class]), arrayAsString];
+}
 
 @end

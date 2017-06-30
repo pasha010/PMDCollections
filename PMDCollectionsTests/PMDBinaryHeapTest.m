@@ -18,6 +18,35 @@
 
 @implementation PMDBinaryHeapTest (Default)
 
+- (void)test_creation {
+    PMDBinaryHeap<NSNumber *> *heap1 = [PMDBinaryHeap binaryHeap];
+    XCTAssertNotNil(heap1);
+
+    PMDBinaryHeap *heap2 = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2]];
+    XCTAssertNotNil(heap2);
+    XCTAssertEqual(heap2.count, 2);
+
+    PMDBinaryHeap *heap3 = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2, @3] comparator:PMDBinaryHeap.defaultComparator];
+    XCTAssertNotNil(heap3);
+    XCTAssertEqual(heap3.count, 3);
+
+    PMDBinaryHeap *heap4 = [PMDBinaryHeap binaryHeapWithObjects:nil];
+    XCTAssertNotNil(heap4);
+    XCTAssertEqual(heap4.count, 0);
+
+    PMDBinaryHeap *heap5 = [PMDBinaryHeap binaryHeapWithComparator:nil];
+    XCTAssertNil(heap5);
+
+    PMDBinaryHeap *heap6 = [PMDBinaryHeap binaryHeapWithObjects:nil comparator:nil];
+    XCTAssertNil(heap6);
+
+    PMDBinaryHeap *heap7 = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2] comparator:nil];
+    XCTAssertNil(heap7);
+
+    PMDBinaryHeap *heap8 = [PMDBinaryHeap binaryHeapWithObjects:nil comparator:PMDBinaryHeap.defaultComparator];
+    XCTAssertNotNil(heap8);
+}
+
 - (void)test_topAndCount {
     PMDBinaryHeap<NSNumber *> *heap = [PMDBinaryHeap binaryHeap];
 
@@ -242,6 +271,39 @@
     [heap2 addObject:@3];
     [heap2 addObject:@5];
     XCTAssertNotEqual([heap1 hash], [heap2 hash]);
+}
+
+- (void)test_equalToOther {
+    PMDBinaryHeap *heap1 = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2]];
+    PMDBinaryHeap *heap2 = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2]];
+    XCTAssertTrue([heap1 isEqual:heap2]);
+}
+
+- (void)test_equalToSelf {
+    PMDBinaryHeap *heap = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2]];
+    XCTAssertTrue([heap isEqual:heap]);
+}
+
+- (void)test_notEqualToNil {
+    PMDBinaryHeap *heap = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2]];
+    XCTAssertFalse([heap isEqual:nil]);
+}
+
+- (void)test_notEqualToOtherClass {
+    PMDBinaryHeap *heap = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2]];
+    NSArray *other = @[@1, @2];
+    XCTAssertFalse([heap isEqual:other]);
+}
+
+- (void)test_notEqualToOtherHeap {
+    PMDBinaryHeap *heap1 = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2]];
+    PMDBinaryHeap *heap2 = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2, @3]];
+    XCTAssertFalse([heap1 isEqual:heap2]);
+}
+
+- (void)test_description {
+    PMDBinaryHeap *heap = [PMDBinaryHeap binaryHeapWithObjects:@[@1, @2, @3]];
+    XCTAssertEqualObjects(heap.description, @"<PMDBinaryHeap: (1, 2, 3)>");
 }
 
 @end

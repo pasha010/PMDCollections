@@ -21,28 +21,28 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>-[PMDBinaryHeapTest test_allValues].xcscheme</key>
+		<key>-[PMDBinaryHeapTest test_enumerationThrowsException].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>-[PMDBinaryHeapTest test_enumerationThrowsException].xcscheme</key>
+		<key>All in PMDQueueTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>All in PMDQueueTest.xcscheme</key>
+		<key>-[PMDQueueTest test_coding].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>-[PMDQueueTest test_coding].xcscheme</key>
+		<key>All in PMDStackTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />

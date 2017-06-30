@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PMDBinaryHeap<__covariant ObjectType> : NSObject <NSCopying>
 
+@property (class, nonnull, nonatomic, copy, readonly) NSComparator defaultComparator;
+
 @property (nonatomic, readonly) NSUInteger count;  // like CFBinaryHeapGetCount
 
 @property (nullable, nonatomic, readonly) ObjectType topObject;  // like CFBinaryHeapGetMinimum and CFBinaryHeapGetMinimumIfPresent
@@ -24,12 +26,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nonnull instancetype)binaryHeapWithComparator:(nonnull NSComparator)comparator;
 
++ (nonnull instancetype)binaryHeapWithObjects:(nonnull NSArray<ObjectType> *)array;
+
 + (nonnull instancetype)binaryHeapWithObjects:(nonnull NSArray<ObjectType> *)array
                                    comparator:(nonnull NSComparator)comparator;
 
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
-- (nonnull instancetype)initWithComparator:(nonnull NSComparator)comparator NS_DESIGNATED_INITIALIZER;  // CFBinaryHeapCreate
+- (nonnull instancetype)initWithComparator:(nonnull NSComparator)comparator;
+
+- (nonnull instancetype)initWithWithObjects:(nonnull NSArray<ObjectType> *)array;
+
+/**
+ * create new binary heap
+ * @param array objects for adding
+ * @param comparator compare objects block, not nil block
+ * @return new instance, if comparator is nil returns nil
+ */
+- (nonnull instancetype)initWithWithObjects:(nonnull NSArray<ObjectType> *)array
+                                 comparator:(nonnull NSComparator)comparator NS_DESIGNATED_INITIALIZER;  // CFBinaryHeapCreate
 
 - (void)addObject:(nonnull ObjectType)object;  // CFBinaryHeapAddValue
 
@@ -46,8 +61,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)enumerateObjectsUsingBlock:(void(^_Nonnull)(ObjectType _Nonnull element))block;
 
 - (BOOL)isEqual:(id)other;
-
-- (BOOL)isEqualToHeap:(PMDBinaryHeap *)heap;
 
 - (NSUInteger)hash;  // CFBinaryHeapApplyFunction
 
