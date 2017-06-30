@@ -9,12 +9,5 @@ before_install:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
-matrix:
-  include:
-    - osx_image: xcode8.2
-      env: R_SDK=iphonesimulator8.3 R_OS_VER=8.3 R_NAME="iPhone 5s"
-    - osx_image: xcode8.2
-      env: R_SDK=iphonesimulator10.3 R_OS_VER=10.3 R_NAME="iPhone 6s"
-
 script:
- -   xctool -scheme PMDCollectionsTests -sdk $R_SDK -destination platform='iOS Simulator, OS=$R_OS_VER,name=$R_NAME' -configuration DEBUG test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+ -   xctool -scheme PMDCollectionsTests -sdk iphonesimulator10.3 -destination platform='iOS Simulator, OS=10.3 ,name='iPhone 7' -configuration DEBUG test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
