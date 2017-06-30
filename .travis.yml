@@ -16,4 +16,4 @@ matrix:
       env: R_SDK=iphonesimulator10.3 R_OS_VER=10.3 R_NAME="iPhone 6s"
 
 script:
- -   xctool -workspace RxObjc.xcworkspace -scheme PMDCollectionsTests -sdk $R_SDK -destination platform='iOS Simulator, OS=$R_OS_VER,name=$R_NAME' -configuration DEBUG test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+ -   xctool -project PMDCollections.xcodeproj -scheme PMDCollectionsTests -sdk $R_SDK -destination platform='iOS Simulator, OS=$R_OS_VER,name=$R_NAME' -configuration DEBUG test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
